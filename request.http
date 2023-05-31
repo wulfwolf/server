@@ -1,0 +1,144 @@
+### POST ######################################################################
+
+### Register
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "userName":"x",
+    "password":"ax",
+    "gender":"male",
+    "height": 170,
+    "weight": 65
+}
+### Register admin
+POST http://localhost:5000/api/admin/auth/register
+Content-Type: application/json
+
+{
+    "email":"x@x.x",
+    "password":"123123"
+}
+### Login
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+    "userName":"j",
+    "password":"j"
+}
+### Login admin
+POST http://localhost:5000/api/admin/auth/login
+Content-Type: application/json
+
+{
+    "email":"s1@gmail.com",
+    "password":"123123"
+}
+### send Noti
+POST http://localhost:5000/api/notification/
+Content-Type: application/json
+# Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
+
+{
+    "title":"new recipe",
+    "desc":"Lorem Ipsum is simply dummy text of the printing and typesetting industry",
+    "content":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    "receiver":"everyone"
+}
+### create Recipe
+POST http://localhost:5000/api/recipe/create
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
+
+{
+    "recipeName":"Xương hầm ngó sen2",
+    "desc":"Canh củ sen kết hợp với sườn non được hầm mềm ngon, bổ dưỡng chắc chắn sẽ là một món canh hấp dẫn cho gia đình bạn!",
+    "preparations":["i1","i2","i3"],
+    "img":"https://i.ytimg.com/vi/QrNibRvdjyw/maxresdefault.jpg",
+    "calories":700,
+    "instruction":["Bước 1","Bước 2","Bước 3"],
+    "meal":"Tráng miệng",
+    "ingredients":["Xương heo","Ngó sen","Cà rốt"],
+    "expiredDate":24
+}
+### create search recipe with options
+POST http://localhost:5000/api/recipe/options/
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
+
+{
+    "meal":null,
+    "ingredient":"Gà"
+}
+### create Recipe
+POST http://localhost:5000/api/ingredient/
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2Nzg2NzcyOTl9.8stvH6a_2V8lDGXWhwuUPIdJhQOKi9wNg51OE3zDAWA
+
+{
+    "foodName":"sữa tươi",
+    "ScanCode":"28444542",
+    "img":"https://cremurahmilk.com/wp-content/uploads/2020/08/Untitled-design-1.png",
+    "unit":"ml"
+}
+
+### add favorite food
+POST http://localhost:5000/api/myfood/63f0bf46feb295ff41f531b2
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2Nzg4NTE1NjF9.v1hkiOq_OeoQJZrmofegK-i3Cv3UnNO68Joy3pWSH1c
+### store food manually
+POST http://localhost:5000/api/storedfood/640e9ac2d7918f9fe70c6c19
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
+ 
+ {
+    "quantity":500
+ }
+### user create Schedule
+POST http://localhost:5000/api/schedule/63f0bf46feb295ff41f531b2
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
+ 
+ {
+    "date": "2023-03-31",
+    "meal": "Bữa sáng"
+ }
+### GET #######################################################################
+### get all recipe
+GET http://localhost:5000/api/recipe/
+### search/get a recipe
+GET http://localhost:5000/api/recipe/63f0bc698a9f93872e044b7a
+
+### DELETE ###################################################################
+### get my favorite food
+GET http://localhost:5000/api/myfood/63f1058429e34fbaf7222e29
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
+### admin/users gets food
+GET http://localhost:5000/api/ingredient/
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
+### get Scanned food
+GET http://localhost:5000/api/ingredient/10054790
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
+### get all food from my fridge
+GET http://localhost:5000/api/storedfood/
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzkwNDQ1ODN9.KytQZZWhp9WsbxzIjA2LXYbLt5ub3d4Vjh9RDm_Xb5Q
+### get all food from my fridge
+GET http://localhost:5000/api/schedule/
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzkwNDQ1ODN9.KytQZZWhp9WsbxzIjA2LXYbLt5ub3d4Vjh9RDm_Xb5Q
+### get all notification
+GET http://localhost:5000/api/notification/
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzkwNDQ1ODN9.KytQZZWhp9WsbxzIjA2LXYbLt5ub3d4Vjh9RDm_Xb5Q
+### delete ####################################################################
+DELETE  http://localhost:5000/api/user/delete/63f03e11c7ad7e427c16165b
+### PUT #######################################################################
+PUT http://localhost:5000/api/storedfood/641ac381affa54a504195c1a
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2ODA5NDg2OTR9.q2qGqsE-k2qwI1OazFwd6ET9YtvkN4jWiKrGN8XWaE0
+
+{
+    "quantity":500
+}
+### user read notification
+PUT http://localhost:5000/api/notification/643cc926b15274095d8b283a
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2ODE3MDYxMDl9.bRY9nlfMBnIDjZB5J4UF8SoeDduyjH6bjwbXnUwjF9g
