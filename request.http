@@ -20,7 +20,7 @@ Content-Type: application/json
     "password":"123123"
 }
 ### Login
-POST http://localhost:5000/api/auth/login
+POST https://yummy-xe9c.onrender.com/api/auth/login
 Content-Type: application/json
 
 {
@@ -142,7 +142,7 @@ GET http://localhost:5000/api/recipe/64795dbe68706d11dbd2bf76
 GET http://localhost:5000/api/myfood/63f1058429e34fbaf7222e29
 Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
 ### admin/users gets food
-GET http://localhost:5000/api/ingredient/
+GET https://yummy-xe9c.onrender.com/api/ingredient/
 Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
 ### get Scanned food
 GET http://localhost:5000/api/ingredient/10054790
