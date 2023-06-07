@@ -15,6 +15,8 @@ const ingredientRouter = require("./routes/ingredient");
 const storedFoodRouter = require("./routes/storedfood");
 const scheduleRouter = require("./routes/schedule");
 const notificationRouter = require("./routes/notification");
+const statusLogRouter = require("./routes/statuslog");
+
 app.use(
   cors({
     origin: "http://localhost:3000",
@@ -31,7 +33,8 @@ app.use("/api/ingredient", ingredientRouter);
 app.use("/api/storedfood", storedFoodRouter);
 app.use("/api/schedule", scheduleRouter);
 app.use("/api/notification", notificationRouter);
+app.use("/api/statuslog", statusLogRouter);
 app.use("/api/admin/auth", adminRouter);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

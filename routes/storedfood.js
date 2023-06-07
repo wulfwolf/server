@@ -77,4 +77,30 @@ router.put("/:id", verifyToken, async (req, res) => {
       .json({ success: false, message: "Internal server error!" });
   }
 });
+//@route DELETE api/storedFood/:id
+//@desc delete food from fridge
+//@access Private
+router.delete("/:id", verifyToken, async (req, res) => {
+  try {
+    const storedFood = await StoredFood.findOneAndDelete({
+      ingredient: req.params.id,
+    });
+    if (storedFood) {
+      const newStoredFood = await StoredFood.find().populate("ingredient");
+      if (newStoredFood)
+        return res.json({
+          success: true,
+          message: "food deleted",
+          newStoredFood,
+        });
+    } else {
+      return res.json({ success: true, message: "food not found" });
+    }
+  } catch (error) {
+    console.log(error);
+    return res
+      .status(500)
+      .json({ success: false, message: "Internal server error!" });
+  }
+});
 module.exports = router;

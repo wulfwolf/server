@@ -7,7 +7,7 @@ Content-Type: application/json
 {
     "userName":"x",
     "password":"ax",
-    "gender":"male",
+    "gender":"Male",
     "height": 170,
     "weight": 65
 }
@@ -52,15 +52,51 @@ Content-Type: application/json
 Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
 
 {
-    "recipeName":"Xương hầm ngó sen2",
-    "desc":"Canh củ sen kết hợp với sườn non được hầm mềm ngon, bổ dưỡng chắc chắn sẽ là một món canh hấp dẫn cho gia đình bạn!",
-    "preparations":["i1","i2","i3"],
-    "img":"https://i.ytimg.com/vi/QrNibRvdjyw/maxresdefault.jpg",
-    "calories":700,
-    "instruction":["Bước 1","Bước 2","Bước 3"],
-    "meal":"Tráng miệng",
-    "ingredients":["Xương heo","Ngó sen","Cà rốt"],
-    "expiredDate":24
+    "recipeName":"Bò sốt vang",
+    "desc":"Bò sốt vang là một trong những món từ bò vô cùng thơm ngon. Nếu bạn đã thử thưởng thức bò số vang hương vị miền Nam thì đổi vị với bò sốt vang miền Bắc, đảm bảo thơm ngon chuẩn vị!",
+    "img":"https://lh6.googleusercontent.com/bQE-KwO69SXIpyNr5o_sixx3cpvYuCYp7Kew3nvFIYq-FpBmBWqQzHqhCyaw8ornkhariMSzkgUUo5Uhzr-ZyYWw8wfuX5TaqQyMoE91g5kWcAMjArxZdhM9ktMCzQ",
+    "preparations":[
+    {
+        "ingredient":"647b261fdd6c680f3e0b9301",
+        "quantity": 60
+    },
+    {
+        "ingredient":"647b25cadd6c680f3e0b92ff",
+        "quantity": 500
+    },
+    {
+        "ingredient":"640ed1fed6943696f8d4fa09",
+        "quantity": 70
+    },
+     {
+        "ingredient":"640ed192d6943696f8d4fa07",
+        "quantity": 70
+    }
+    ],
+    "instruction":["Cà rốt và khoai tây bạn rửa sạch rồi gọt bỏ vỏ. Sau đó bạn cắt thành từng cục vừa ăn. Đừng cắt quá to, khi hầm sẽ lâu chín, ngược lại đừng cắt quá nhỏ khi hầm dễ bị nát nhé.","Thịt nạm bò sau khi mua về nếu còn tươi nóng thì bạn chỉ cần rửa sơ qua với nước rồi sơ chế ngay. Nếu thịt mua để lâu ở ngoài thì bạn cần khử mùi hôi của thịt trước khi nấu nhé.","Sau khi trụng phần thịt xong, bạn vớt thịt bò cho vào tô. Sau đó bạn thêm 1 gói sốt bò kho (khoảng 50gr) cùng 10ml rượu vang đỏ. Tiếp đến bạn trộn đều rồi ướp thịt bò trong trong 30 phút cho thịt ngấm đều gia vị.","Cho vào nồi 15gr bơ lạt còn lại, sau đó bật bếp đun cho bơ chảy ra hoàn toàn. Sau đó bạn cho phần tỏi băm vào nồi. Phi tỏi cho thơm vàng rồi cho tiếp phần bò đã ướp vào.","Sau 60 phút hầm, bạn cho tiếp cà rốt vào hầm tiếp 15 phút. Sau 15 phút bạn cho khoai tây vào hầm đến khi khoai tây mềm hẳn. Cà rốt sẽ lâu mềm hơn khoai tây nên bạn cho cà rốt vào hầm trước nhé.","Thịt bò sốt vang theo kiểu miền Bắc sẽ có độ mặn ngọt vừa phải, phần sốt hơi sánh, thịt bò mềm rục thơm lừng kết hợp với các rau củ giúp cho mùi vị món ăn đậm đà tròn vị."],
+    "meal":"Bữa tối",
+    "warningTags":["ALCOHOL"]
+}
+### create statuslog
+POST http://localhost:5000/api/statuslog/
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2Nzg2NzcyOTl9.8stvH6a_2V8lDGXWhwuUPIdJhQOKi9wNg51OE3zDAWA
+
+{
+    "height": 176,
+    "weight": 65
+}
+### create ingredient
+POST http://localhost:5000/api/ingredient/
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2Nzg2NzcyOTl9.8stvH6a_2V8lDGXWhwuUPIdJhQOKi9wNg51OE3zDAWA
+
+{
+    "foodName":"Rượu vang đỏ",
+    "ScanCode":"21232122",
+    "img":"https://winevn.com/wp-content/uploads/2019/07/R%C6%B0%E1%BB%A3u-Vang-%C4%90%E1%BB%8F-Chateau-Arrogant-Limoux-1.jpg",
+    "unit":"ml",
+    "kcalRate": 85
 }
 ### create search recipe with options
 POST http://localhost:5000/api/recipe/options/
@@ -69,18 +105,7 @@ Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Zl
 
 {
     "meal":null,
-    "ingredient":"Gà"
-}
-### create Recipe
-POST http://localhost:5000/api/ingredient/
-Content-Type: application/json
-Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2Nzg2NzcyOTl9.8stvH6a_2V8lDGXWhwuUPIdJhQOKi9wNg51OE3zDAWA
-
-{
-    "foodName":"sữa tươi",
-    "ScanCode":"28444542",
-    "img":"https://cremurahmilk.com/wp-content/uploads/2020/08/Untitled-design-1.png",
-    "unit":"ml"
+    "ingredient":"641a992aaffa54a504195b24"
 }
 
 ### add favorite food
@@ -105,9 +130,12 @@ Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Zl
  }
 ### GET #######################################################################
 ### get all recipe
+GET http://localhost:5000/api/statuslog/
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2ODU4OTIzOTB9.GhI6P_7MKSscjLBXJu2w8kriMh8x1CyYxcRmHrO7Z08
+### get all recipe
 GET http://localhost:5000/api/recipe/
 ### search/get a recipe
-GET http://localhost:5000/api/recipe/63f0bc698a9f93872e044b7a
+GET http://localhost:5000/api/recipe/64795dbe68706d11dbd2bf76
 
 ### DELETE ###################################################################
 ### get my favorite food
@@ -131,6 +159,7 @@ Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Zl
 ### delete ####################################################################
 DELETE  http://localhost:5000/api/user/delete/63f03e11c7ad7e427c16165b
 ### PUT #######################################################################
+### user updateFood
 PUT http://localhost:5000/api/storedfood/641ac381affa54a504195c1a
 Content-Type: application/json
 Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2ODA5NDg2OTR9.q2qGqsE-k2qwI1OazFwd6ET9YtvkN4jWiKrGN8XWaE0
@@ -142,3 +171,12 @@ Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Zl
 PUT http://localhost:5000/api/notification/643cc926b15274095d8b283a
 Content-Type: application/json
 Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2ODE3MDYxMDl9.bRY9nlfMBnIDjZB5J4UF8SoeDduyjH6bjwbXnUwjF9g
+### user update I4
+PUT http://localhost:5000/api/auth/update
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2ODU4NzY3MjJ9.p4QQm0nkk47w-bDKdimnErqxnwrg28GGpMnkvIOqqZI
+
+{
+    "height":178,
+    "weight":85
+}

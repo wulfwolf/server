@@ -10,15 +10,21 @@ const RecipeSchema = new Schema(
     desc: {
       type: String,
     },
-    preparations: {
-      type: Array,
-    },
     img: {
       type: String,
     },
-    calories: {
-      type: Number,
-    },
+    preparations: [
+      {
+        ingredient: {
+          type: Schema.Types.ObjectId,
+          ref: "ingredients",
+        },
+        quantity: {
+          type: Number,
+          required: true,
+        },
+      },
+    ],
     instruction: {
       type: Array,
     },
@@ -28,7 +34,19 @@ const RecipeSchema = new Schema(
       default: "Bữa sáng",
     },
     favorite: [{ type: Schema.Types.ObjectId, ref: "users" }],
-    ingredients: [{ type: String }],
+    // ingredients: [{ type: String }],
+    warningTags: [
+      {
+        type: String,
+        enum: [
+          "ALCOHOL",
+          "FASTFOOD",
+          "HEALTHY FOOD",
+          "FATTY FOOD",
+          "SPICY FOOD",
+        ],
+      },
+    ],
   },
   {
     timestamps: true,

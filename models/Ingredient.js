@@ -23,6 +23,10 @@ const Ingredient = new Schema(
       type: String,
       enum: ["gr", "ml"],
     },
+    kcalRate: {
+      type: Number,
+      require: true,
+    },
   },
   {
     timestamps: true,

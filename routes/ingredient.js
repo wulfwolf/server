@@ -8,13 +8,14 @@ const Ingredient = require("../models/Ingredient");
 //@desc admin add ingredient
 //@access Private
 router.post("/", verifyToken, async (req, res) => {
-  const { foodName, ScanCode, img, unit } = req.body;
+  const { foodName, ScanCode, img, unit, kcalRate } = req.body;
   try {
     const ingredient = new Ingredient({
       foodName,
       ScanCode,
       img,
       unit,
+      kcalRate,
     });
     await ingredient.save();
     res.status(200).json({ success: true, message: "Saved!", ingredient });

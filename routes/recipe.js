@@ -11,13 +11,12 @@ router.post("/create", async (req, res) => {
   const {
     recipeName,
     desc,
-    calories,
     instruction,
     meal,
     favorite,
     img,
-    ingredients,
     preparations,
+    warningTags,
   } = req.body;
 
   if (!recipeName) {
@@ -30,12 +29,11 @@ router.post("/create", async (req, res) => {
       recipeName,
       desc,
       preparations,
-      calories,
       instruction,
       meal,
       favorite,
       img,
-      ingredients,
+      warningTags,
     });
 
     await axios.post(`http://localhost:5000/api/notification/`, {
@@ -57,7 +55,7 @@ router.post("/create", async (req, res) => {
 //@access Public
 router.get("/", async (req, res) => {
   try {
-    const recipes = await Recipe.find();
+    const recipes = await Recipe.find().populate("preparations.ingredient");
 
     return res.json({ success: true, message: "Success", recipes });
   } catch (error) {
@@ -73,7 +71,9 @@ router.get("/", async (req, res) => {
 //@access Public
 router.get("/:id", async (req, res) => {
   try {
-    const recipe = await Recipe.findOne({ _id: req.params.id });
+    const recipe = await Recipe.findOne({ _id: req.params.id }).populate(
+      "preparations.ingredient"
+    );
     return res.json({ success: true, message: "Success", recipe });
   } catch (error) {
     console.log(error);
@@ -90,10 +90,10 @@ router.post("/options/", verifyToken, async (req, res) => {
   try {
     if (!meal) {
       const RecipeWithOpts = await Recipe.find({
-        ingredients: {
-          $elemMatch: { $eq: ingredient },
+        preparations: {
+          $elemMatch: { ingredient: ingredient },
         },
-      });
+      }).populate("preparations.ingredient");
       return res.json({ success: true, message: "Success", RecipeWithOpts });
     }
     if (!ingredient) {
@@ -108,12 +108,12 @@ router.post("/options/", verifyToken, async (req, res) => {
           meal,
         },
         {
-          ingredients: {
-            $elemMatch: { $eq: ingredient },
+          preparations: {
+            $elemMatch: { ingredient: ingredient },
           },
         },
       ],
-    });
+    }).populate("preparations.ingredient");
     return res.json({ success: true, message: "Success", RecipeWithOpts });
   } catch (error) {
     console.log(error);
