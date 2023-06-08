@@ -36,7 +36,7 @@ router.post("/create", async (req, res) => {
       warningTags,
     });
 
-    await axios.post(`http://localhost:5000/api/notification/`, {
+    await axios.post(`https://yummy-xe9c.onrender.com/api/notification/`, {
       title: "Hệ thống vừa cập nhật công thức mới",
       desc: recipeName,
       content: ` Hãy cùng khám phá món ăn mới nhé`,
@@ -44,7 +44,9 @@ router.post("/create", async (req, res) => {
     });
 
     await recipe.save();
-    res.json({ success: true, message: "recipe created !", recipe });
+    res
+      .status(200)
+      .json({ success: true, message: "recipe created !", recipe });
   } catch (error) {
     res.status(500).json({ success: false, message: "internal server error" });
   }
@@ -120,6 +122,43 @@ router.post("/options/", verifyToken, async (req, res) => {
     return res
       .status(500)
       .json({ success: false, message: "Internal server error!" });
+  }
+});
+//@route PUT api/recipe/:id
+//@desc edit recipe
+//@access Public
+router.put("/:id", verifyToken, async (req, res) => {
+  const {
+    recipeName,
+    desc,
+    img,
+    instruction,
+    meal,
+    preparations,
+    warningTags,
+  } = req.body;
+  try {
+    console.log(req.params.id);
+
+    const newRecipe = await Recipe.findOneAndUpdate(
+      { _id: req.params.id },
+      {
+        recipeName,
+        desc,
+        img,
+        instruction,
+        meal,
+        preparations,
+        warningTags,
+      }
+    );
+    if (newRecipe) {
+      res
+        .status(200)
+        .json({ success: true, message: "recipe updated !", newRecipe });
+    }
+  } catch (error) {
+    res.status(500).json({ success: false, message: "internal server error" });
   }
 });
 module.exports = router;

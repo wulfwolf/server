@@ -129,7 +129,7 @@ Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Zl
     "meal": "Bữa sáng"
  }
 ### GET #######################################################################
-### get all recipe
+### get all statuslog
 GET http://localhost:5000/api/statuslog/
 Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2ODU4OTIzOTB9.GhI6P_7MKSscjLBXJu2w8kriMh8x1CyYxcRmHrO7Z08
 ### get all recipe
@@ -179,4 +179,24 @@ Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Zl
 {
     "height":178,
     "weight":85
+}
+### user update I4
+PUT http://localhost:5000/api/recipe/6479c7849727fdd2860ab257
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2ODU4NzY3MjJ9.p4QQm0nkk47w-bDKdimnErqxnwrg28GGpMnkvIOqqZI
+
+{
+    "recipeName": "Gà rán sốt cay1",
+    "desc": "Gà Yangnyeom là một loại gà rán của Hàn Quốc được ướp với nước sốt cay và ngọt của Gochujang, tỏi, đường và các gia vị khác. Nó được xem như món “đồ nhắm” dùng trong khi uống rượu ở Hàn Quốc.!",
+    "img": "https://cdn.sgtiepthi.vn/wp-content/uploads/2020/12/T6_Yangnyeom-Tongdak_shutterstock.jpg",
+    "instruction": [
+        "Bước 1",
+        "Bước 2",
+        "Bước 3"
+    ],
+    "meal": "Bữa trưa",
+    "warningTags": [
+        "SPICY FOOD",
+        "FATTY FOOD"
+    ]
 }

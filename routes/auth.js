@@ -115,7 +115,7 @@ router.put("/update/", verifyToken, async (req, res) => {
       { new: true }
     );
     if (height && weight) {
-      await axios.post(`http://localhost:5000/api/statuslog/`, {
+      await axios.post(`https://yummy-xe9c.onrender.com/api/statuslog/`, {
         height,
         weight,
         user: req.userId,
