@@ -120,12 +120,12 @@ Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Zl
     "quantity":500
  }
 ### user create Schedule
-POST http://localhost:5000/api/schedule/63f0bf46feb295ff41f531b2
+POST https://yummy-xe9c.onrender.com/api/schedule/63f0bf46feb295ff41f531b2
 Content-Type: application/json
 Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
  
  {
-    "date": "2023-03-31",
+    "date": "2023-06-31",
     "meal": "Bữa sáng"
  }
 ### GET #######################################################################
@@ -199,4 +199,16 @@ Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2Zl
         "SPICY FOOD",
         "FATTY FOOD"
     ]
+}
+### admin update ingredient
+PUT http://localhost:5000/api/ingredient/641ac3d8affa54a504195c24
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2ODU4NzY3MjJ9.p4QQm0nkk47w-bDKdimnErqxnwrg28GGpMnkvIOqqZI
+
+{
+    "foodName": "Đậu phụ",
+    "img": "https://y5kbp0ifnvobj.vcdn.cloud/uploads/filecloud/2022/July/29/13401-758131659076077-1659076077.jpg",
+    "ScanCode": "31245651",
+    "unit": "gr",
+    "kcalRate": "51"
 }

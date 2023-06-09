@@ -34,7 +34,7 @@ router.post("/:id", verifyToken, async (req, res) => {
       recipe: req.params.id,
     });
     await schedule.save();
-    await axios.post(`http://localhost:5000/api/notification/`, {
+    await axios.post(`https://yummy-xe9c.onrender.com/api/notification/`, {
       title: `Bạn vừa lên lịch trình cho món ăn`,
       desc: `${schedule.recipe} - ${schedule.meal} - ${schedule.date} `,
       content: `Bạn sẽ nhận được lời nhắc vào ngày ${date}`,

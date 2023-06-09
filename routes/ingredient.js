@@ -56,5 +56,26 @@ router.get("/:id", verifyToken, async (req, res) => {
       .json({ success: false, message: "Internal server error!" });
   }
 });
-
+//@route PUT api/ingredient/:id
+//@desc admin edit ingredient
+//@access Private
+router.put("/:id", verifyToken, async (req, res) => {
+  const { foodName, ScanCode, img, unit, kcalRate } = req.body;
+  try {
+    const newIngredient = await Ingredient.findOneAndUpdate(
+      { _id: req.params.id },
+      {
+        foodName,
+        ScanCode,
+        img,
+        unit,
+        kcalRate,
+      }
+    );
+    await newIngredient.save();
+    res.status(200).json({ success: true, message: "updated!", newIngredient });
+  } catch (error) {
+    res.status(500).json({ success: false, message: "internal server error" });
+  }
+});
 module.exports = router;
