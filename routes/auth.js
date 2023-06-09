@@ -44,7 +44,7 @@ router.post("/register", async (req, res) => {
 
     await user.save();
 
-    await axios.post(`http://localhost:5000/api/statuslog/`, {
+    await axios.post(`https://yummy-xe9c.onrender.com/api/statuslog/`, {
       height,
       weight,
       user: user._id,
