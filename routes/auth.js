@@ -54,7 +54,7 @@ router.post("/register", async (req, res) => {
       { userId: user._id },
       process.env.ACCESS_TOKEN_SECRET
     );
-    res.json({
+    res.status(200).json({
       success: true,
       message: "User created successfully !",
       accessToken,

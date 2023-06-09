@@ -125,7 +125,7 @@ Content-Type: application/json
 Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2M2ZlYmFlYjBiMDhlYWVhNjliMTBjYWEiLCJpYXQiOjE2NzgyODU1Mjl9.hE43F8282YS3TwwBesdBFLZ05vhkyGJsmnoaDq-sFgs
  
  {
-    "date": "2023-06-31",
+    "date": "2023-07-30",
     "meal": "Bữa sáng"
  }
 ### GET #######################################################################

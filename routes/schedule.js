@@ -33,6 +33,7 @@ router.post("/:id", verifyToken, async (req, res) => {
       user: req.userId,
       recipe: req.params.id,
     });
+
     await schedule.save();
     await axios.post(`https://yummy-xe9c.onrender.com/api/notification/`, {
       title: `Bạn vừa lên lịch trình cho món ăn`,
